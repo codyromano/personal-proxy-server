@@ -1,0 +1,50 @@
+/*
+TODO:
+- Use .scss
+- Split styles into modules & minify
+*/
+main {
+  font-family: Helvetica;
+}
+/* Simple reset */
+body, main, h1 {
+  margin: 0;
+  padding: 0;
+}
+p {
+  line-height: 150%;
+}
+header {
+  display: none;
+}
+/* Main center column */
+.container {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.center-content-full-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.small-card {
+  font-size: 1.25rem;
+  max-width: 25rem;
+  color: #000;
+  background-color: rgba(255,255,255,0.75);
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+.landing-header {
+  color: #fff;
+}
+.landing-page {
+  background: url(../images/bg.jpg) no-repeat;
+  background-size: cover;
+}
+a {
+  color: #000;
+}
