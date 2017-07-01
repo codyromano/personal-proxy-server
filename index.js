@@ -1,14 +1,14 @@
-const ProxyServer = require('./server/ProxyServer');
-const StaticServer = require('./server/PublicStaticServer');
 const config = require('./config');
+const ProxyServer = require('./server/ProxyServer');
+const setUpDefaultRoute = require('./server/setUpDefaultRoute');
+const { childAppManifest, httpPort} = config.getAll();
 
-new StaticServer(
-  config.get('staticDir')
-).listen(
-  config.get('staticPort')
+const server = new ProxyServer({
+  onBeforeListen: setUpDefaultRoute
+});
+
+childAppManifest.forEach(childApp =>
+  server.addProxyRoute(childApp)
 );
 
-new ProxyServer({
-  proxyPort: config.get('httpPort'),
-  appManifest: config.get('childAppManifest')
-}).listen();
+server.listen(httpPort);

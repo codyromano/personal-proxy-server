@@ -1,14 +1,9 @@
 [
   {
-    "displayName": "Flaneur",
-    "path": "flaneur",
-    "port": 8011,
-    "repo": "https://github.com/codyromano/flaneur.git"
-  },
-  {
     "displayName": "Fit Bank",
-    "path": "fit-bank",
-    "port": 8012,
+    "path": "/fit-bank/",
+    "port": 3456,
+    "domain": "localhost",
     "repo": "https://github.com/codyromano/fit-bank.git"
   }
 ]

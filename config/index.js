@@ -1,5 +1,6 @@
 const path = require('path');
 const childAppManifest = require('./applications.json');
+const defaultApp = require('./defaultApplication.json');
 const appMode = process.env.NODE_ENV == 'PROD' ? 'PROD' : 'DEV';
 
 const getConfig = () => {
@@ -17,7 +18,8 @@ const getConfig = () => {
     rootDir,
     errorFilesDir: path.join(rootDir, 'static/errors/'),
     appMode,
-    childAppManifest
+    childAppManifest,
+    defaultApp
   };
 };
 
@@ -29,5 +31,8 @@ module.exports = {
     } else {
       throw new Error(`Unknown configuration option ${key}`);
     }
+  },
+  getAll() {
+    return getConfig();
   }
 };

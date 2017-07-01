@@ -1,0 +1,7 @@
+  {
+    "displayName": "Blog",
+    "path": "/blog/",
+    "port": 8000,
+    "domain": "localhost",
+    "repo": ""
+  }
