@@ -1,11 +1,14 @@
+const ProxyServer = require('./server/ProxyServer');
+const StaticServer = require('./server/PublicStaticServer');
 const config = require('./config');
-const express = require('express');
-const app = express();
 
-const staticDir = config.get('staticDir');
-app.use(express.static(staticDir));
+new StaticServer(
+  config.get('staticDir')
+).listen(
+  config.get('staticPort')
+);
 
-const port = config.get('httpPort');
-app.listen(port, () => {
-  console.log(`Listening on ${port}`);
-});
+new ProxyServer({
+  proxyPort: config.get('httpPort'),
+  appManifest: config.get('childAppManifest')
+}).listen();

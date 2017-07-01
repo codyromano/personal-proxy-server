@@ -12,6 +12,11 @@
   },
   "author": "Cody Romano",
   "dependencies": {
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "http-proxy": "^1.16.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.1.1",
+    "eslint-plugin-react": "^7.1.0"
   }
 }
