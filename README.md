@@ -10,11 +10,11 @@ cd codyromano
 ## Running in Prod
 
 ```
-NODE_ENV=PROD npm start
+npm start
 ```
 
 ## Running in Dev
 
 ```
-npm start
+node index.js
 ```
