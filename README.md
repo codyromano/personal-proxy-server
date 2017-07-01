@@ -11,10 +11,12 @@ cd codyromano
 
 ```
 npm start
+open http://localhost:80/
 ```
 
 ## Running in Dev
 
 ```
 node index.js
+open http://localhost:8081/
 ```
