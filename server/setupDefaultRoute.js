@@ -1,12 +1,13 @@
+const proxy = require('http-proxy-middleware');
 const { defaultApp } = require('../config').getAll();
-const { path } = defaultApp;
+const { domain, port, path } = defaultApp;
 
 module.exports = function(app) {
-  app.get(`${path}?*`, (req, res) => {
-    res.end('blog');
-  });
+  const options = {
+    target: `http://${domain}:${port}`
+  }; 
+  app.use(path, proxy(options));
 
-  // Default to blog
   app.get('/', (req, res) => {
     res.redirect(path);
   });
