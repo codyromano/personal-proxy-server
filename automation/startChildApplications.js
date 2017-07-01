@@ -20,7 +20,6 @@ const commandPromise = function(command) {
 };
 
 const {
-  foreverBinaryDir,
   npmBinaryDir,
   childAppsDir,
   childAppManifest,
@@ -28,17 +27,14 @@ const {
 } = config.getAll();
 
 module.exports = function() {
-  const commands = [
-    // Stop all forever tasks
-    `${foreverBinaryDir} stopall`
-  ];
+  const commands = [];
 
   const childAppPaths = childAppManifest
     .concat(defaultApp)
     .map(app => path.join(childAppsDir, app.path));
 
   childAppPaths.forEach(appPath => {
-    commands.push(`${foreverBinaryDir} ${npmBinaryDir} start --prefix ${appPath} &`);
+    commands.push(`${npmBinaryDir} start --prefix ${appPath} &`);
   });
 
   return Promise.all(
