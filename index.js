@@ -1,11 +1,8 @@
 const config = require('./config');
 const ProxyServer = require('./server/ProxyServer');
-const setUpDefaultRoute = require('./server/setUpDefaultRoute');
 const { childAppManifest, httpPort} = config.getAll();
 
-const server = new ProxyServer({
-  onBeforeListen: setUpDefaultRoute
-});
+const server = new ProxyServer();
 
 childAppManifest.forEach(childApp =>
   server.addProxyRoute(childApp)

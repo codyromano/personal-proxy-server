@@ -1,12 +1,11 @@
 const express = require('express');
 const proxy = require('http-proxy-middleware');
+const emptyFn = () => {};
 
 class ProxyServer {
-  constructor({
-    onBeforeListen
-  }) {
+  constructor(options = {}) {
     this.app = express();
-    this.onBeforeListen = onBeforeListen;
+    this.onBeforeListen = options.onBeforeListen || emptyFn;
   }
   addProxyRoute({ port, path, domain }) {
     const options = {
