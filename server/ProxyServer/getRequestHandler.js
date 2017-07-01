@@ -21,7 +21,7 @@ function getProxyTarget(req, res, appManifest) {
   const target = appManifest.filter(
     app => childAppShouldHandleRequest(pathname, app.path)
   );
-  return target.length === 1 ? target : getDefaultProxyTarget();
+  return target.length === 1 ? target[0] : getDefaultProxyTarget();
 }
 
 module.exports = function getProxyServerRequestHandler({
