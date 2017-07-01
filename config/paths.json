@@ -1,0 +1,14 @@
+{
+  "DEV": {
+    "domain": "localhost",
+    "childAppsDir": "/Users/Cody/Documents/side-projects/",
+    "foreverBinaryDir": "/usr/local/bin/forever",
+    "npmBinaryDir": "/usr/local/bin/npm"
+  },
+  "PROD": {
+    "domain": "codyromano.com",
+    "childAppsDir": "/home/romanocr/codyromano/applications",
+    "foreverBinaryDir": "/usr/bin/forever",
+    "npmBinaryDir": "/usr/bin/npm"
+  }
+}

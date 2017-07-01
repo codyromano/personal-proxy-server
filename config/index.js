@@ -1,18 +1,17 @@
 const path = require('path');
 const childAppManifest = require('./applications.json');
 const defaultApp = require('./defaultApplication.json');
+const paths = require('./paths.json');
 const appMode = process.env.NODE_ENV == 'PROD' ? 'PROD' : 'DEV';
 
 const getConfig = () => {
   const rootDir = path.dirname(require.main.filename);
-  const domains = {
-    'PROD': 'codyromano.com',
-    'DEV': 'localhost'
-  };
 
-  return {
+  let config = {};
+  Object.assign(config, paths[appMode]);
+
+  return Object.assign(config, {
     httpPort: appMode === 'PROD' ? 80 : 8081,
-    domain: domains[appMode],
     staticPort: 8010,
     staticDir: path.join(rootDir, 'static'),
     rootDir,
@@ -20,7 +19,7 @@ const getConfig = () => {
     appMode,
     childAppManifest,
     defaultApp
-  };
+  });
 };
 
 module.exports = {
