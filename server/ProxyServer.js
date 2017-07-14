@@ -15,11 +15,9 @@ class ProxyServer {
   }
 
   listen(port) {
-    if (typeof this.onBeforeListen === 'function') {
-      this.onBeforeListen(this.app);
-    }
+    this.onBeforeListen(this.app);
     this.app.listen(port);
-    console.log(`Proxy server running on ${port}`);
+    console.log(`Proxy server running on ${port}`); // eslint-disable-line no-console
   }
 }
 
