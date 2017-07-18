@@ -9,6 +9,13 @@ git clone https://github.com/codyromano/personal-proxy-server.git
 cd personal-proxy-server
 ```
 
+## Configuration
+
+1. Edit the list of applications you want to run in `config/applications.json`.
+2. If an HTTP request doesn't match any path in `applications.json`, it will be directed to your default application. Define your default app in `config/defaultApplication.json`.
+
+For example, I run an app on my personal website called FitBank. The dedicated path prefix for FitBank is `fit-bank`. If a request doesn't begin with that path, the proxy server forwards it to the default application, a Ghost blog.
+
 ## Running in Prod
 
 ```
