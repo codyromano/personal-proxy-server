@@ -15,7 +15,7 @@ cd personal-proxy-server && npm install
 2. Define your default app in `config/defaultApplication.json`.
 3. Update the paths in `config/paths.json`.
 
-For example, I run an app on my personal website called FitBank. The dedicated path prefix for FitBank is `fit-bank`. If a request doesn't begin with that path, the proxy server forwards it to the default application, a Ghost blog.
+For example, I run an app on my personal website called FitBank. The dedicated path prefix for FitBank is `fit-bank`. If a request doesn't begin with that path, the proxy server forwards it to the default application (a blog).
 
 ## Running in Prod
 
