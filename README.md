@@ -1,10 +1,12 @@
-# Personal website
+# Personal Proxy Server
+
+Host multiple Node projects on the same web server without exposing the port numbers for each application
 
 ## Set up
 
 ```
-git clone https://github.com/codyromano/codyromano.git
-cd codyromano
+git clone https://github.com/codyromano/personal-proxy-server.git
+cd personal-proxy-server
 ```
 
 ## Running in Prod
