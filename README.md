@@ -17,16 +17,24 @@ cd personal-proxy-server && npm install
 
 For example, I run an app on my personal website called FitBank. The dedicated path prefix for FitBank is `fit-bank`. If a request doesn't begin with that path, the proxy server forwards it to the default application (a blog).
 
-## Running in Prod
+## Running the server
 
+Spin up the web servers that you defined in `applications.json` and `defaultApplication.json`.
+
+Running in Prod:
 ```
 npm start
 open http://localhost:80/
 ```
 
-## Running in Dev
-
+Running in dev:
 ```
 node index.js
 open http://localhost:8081/
+```
+Running persistently in Prod:
+```
+# Some aspects of this script such as file paths are specific to my
+# implementation, but it's a useful example.
+bash ~/codyromano/automation/start-website.bash &
 ```
