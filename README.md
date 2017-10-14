@@ -36,5 +36,6 @@ Running persistently in Prod:
 ```
 # Some aspects of this script such as file paths are specific to my
 # implementation, but it's a useful example.
+screen
 bash ~/codyromano/automation/start-website.bash &
 ```
