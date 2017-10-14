@@ -19,7 +19,7 @@ For example, I run an app on my personal website called FitBank. The dedicated p
 
 ## Running the server
 
-Spin up the web servers that you defined in `applications.json` and `defaultApplication.json`.
+First, spin up the web servers that you defined in `applications.json` and `defaultApplication.json`. Note that personal-proxy-server will only connect you to these "child applications"; it won't spin up the servers on your behalf.
 
 Running in Prod:
 ```
