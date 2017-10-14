@@ -1,3 +1,12 @@
+/*
+I'm putting this script on the backburner for now
+because it requires that all child applications be
+start-able via npm start, and I have apps that run
+differently.
+
+Until I put better automation in place, the preferred
+method for startng the server is ./start-website.bash.
+*/
 const path = require('path');
 const config = require('../config');
 const exec = require('child_process').exec;

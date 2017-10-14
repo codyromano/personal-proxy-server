@@ -5,5 +5,12 @@
     "port": 3456,
     "domain": "localhost",
     "repo": "https://github.com/codyromano/fit-bank.git"
+  },
+  {
+    "displayName": "Static",
+    "path": "/cody-static/",
+    "port": 9000,
+    "domain": "localhost",
+    "repo": ""
   }
 ]
